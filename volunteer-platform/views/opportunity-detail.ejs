@@ -1,0 +1,46 @@
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow">
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold mb-2"><%= opportunity.title %></h1>
+    <div class="flex items-center text-gray-500 mb-4">
+      <i class="fas fa-user mr-2"></i>
+      <span>Posted by: <%= opportunity.organizer_email %></span>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <div class="h-64 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
+      <i class="fas fa-hands-helping text-6xl text-gray-400"></i>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <h3 class="font-semibold mb-2 text-lg">Location</h3>
+        <div class="flex items-center text-gray-600">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <span><%= opportunity.location %></span>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <h3 class="font-semibold mb-2 text-lg">Date & Time</h3>
+        <div class="flex items-center text-gray-600">
+          <i class="fas fa-calendar-day mr-2"></i>
+          <span><%= new Date(opportunity.date).toLocaleString() %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="font-semibold mb-2 text-lg">Description</h3>
+      <div class="prose max-w-none">
+        <%= opportunity.description %>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+      <i class="fas fa-hand-paper mr-2"></i> Sign Up for This Opportunity
+    </button>
+  </div>
+</div>
